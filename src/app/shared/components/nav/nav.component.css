@@ -1,0 +1,44 @@
+nav{
+  background-color: #0F8B8D;
+  padding: 10px;
+}
+
+nav ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav ul li{
+  display: inline-block;
+}
+
+nav ul li:hover{
+  opacity: 0.5;
+}
+
+nav ul li a{
+  color: #DAD2D8;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+nav ul li a:hover{
+  background-color: #0F8B8D;
+  border-radius: 5px;
+  transform: scale(1.1);
+}
+
+nav ul li a[href="index.html"]{
+  background-color: #A8201A;
+  border-radius: 5px;
+}
+
+nav ul li a[href="index.html"]:hover{
+  background-color: #8C1B16;
+  transform: scale(1.1);
+}

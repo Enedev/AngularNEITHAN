@@ -1,0 +1,18 @@
+header {
+  color: white;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+header div {
+  border-left: 0.25rem dotted;
+  border-right: 0.25rem dotted;
+  border-color: white;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 1rem #EC9A29;
+}
