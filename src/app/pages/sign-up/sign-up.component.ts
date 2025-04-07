@@ -27,25 +27,21 @@ export class SignUpComponent {
 
   onRegistry(){
 
-    console.log(this.registryForm);
-
-    console.log(this.registryForm.controls.email.errors); //Muestra los errores
+    //console.log(this.registryForm);
+    //console.log(this.registryForm.controls.email.errors); //Muestra los errores
 
     if(this.registryForm.invalid){
       alert('Formulario no valido');
       return;
     }
 
-    this.router.navigateByUrl('/home'); //Si el formulario es correcto se dirige al home
-
-    console.log(this.registryForm.controls.email.value); //Obtiene el valor del email
-
-    const {rePassword:_, ...userRegistry} = this.registryForm.value; //Obtiene lo que se ingreso en el formulario como un objeto
-    console.log(userRegistry);
-
-    this.registryForm.reset(); //Resetea el formulario
+    const {rePassword:_, ...userRegistry} = this.registryForm.value; //Obtiene lo que se ingreso en el formulario como un objeto en userRegistry
 
     this.authService.registry(userRegistry);
+    
+    this.registryForm.reset(); //Resetea el formulario
+    
+    //console.log(this.registryForm.controls.email.value); //Obtiene el valor del email
 
     //this.router.navigateByUrl('/home');
     //console.log(this.registryForm.valid)

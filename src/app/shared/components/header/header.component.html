@@ -1,5 +1,15 @@
 <header>
-  <div>
-    InstaPic
-  </div>
+    
+  @if(isLoggedUser()){ 
+      <ul class="menu">
+          <li><a [routerLink]="['home']">Inicio</a></li>
+          <li><a [routerLink]="['profile']">Mi perfil</a></li>
+          <li><a href="/find.html">Buscar usuarios</a></li>
+          <li><a href="/upload-photo.html">Subir fotos</a></li>
+          <li><a (click)="onLogout()">Cerrar sesión</a></li>
+      </ul>
+  }@else{
+      InstaPic
+  }
+
 </header>

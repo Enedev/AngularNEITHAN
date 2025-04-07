@@ -11,21 +11,18 @@ import { CommonModule } from '@angular/common';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-
 export class AppComponent {
-  title = 'insta-pic-neithan';
+  title = 'insta-pic-app';
 
-  showNav = false;
-  showHeader = false;
+  /*showNav = false;
+  showHeader = true;
 
-  constructor(private router: Router) {
-    this.router.events.subscribe(event => {
+  constructor(private router:Router){
+    this.router.events.subscribe(event =>{
       if (event instanceof NavigationEnd) {
-        // Ocultar nav en login (index) y sign in
-        this.showNav = !['/', '/login', '/sign-up'].includes(event.url);
-        
-        this.showHeader = true;
+        this.showNav = event.url === '/home';
+        this.showHeader = event.url !== '/home';
       }
-    });
-  }
+    })
+  }*/
 }
