@@ -1,16 +1,20 @@
 <main>
   <section id="profile">
     <div>
-      <img src="../assets/batman_avatar.webp" />
+      <img src="batman_avatar.webp" />
       <span id="userName">Neistan</span>
     </div>
     <div>
       <span>10</span>
       <span>Publicaciones</span>
     </div>
-    <div>
-      <span>5</span>
-      <span>Seguidores</span>
+    <div class="container">
+      <div style="font-size: 24px; margin-bottom: 1rem;">
+        <span>{{ seguidores }}</span>
+        <span style="margin-left: 8px;">Seguidores</span>
+      </div>
+      <button (click)="subirSeguidor()">Subir seguidor 🙌</button>
+      <p>Pulsa el botón para simular un nuevo seguidor y ver <code>ngDoCheck</code> funcionando en consola.</p>
     </div>
     <div>
       <span>250</span>

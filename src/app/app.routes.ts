@@ -1,28 +1,32 @@
-import { Component } from '@angular/core';
-import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './shared/components/header/header.component';
-import { FooterComponent } from './shared/components/footer/footer.component';
-import { NavComponent } from './shared/components/nav/nav.component';
-import { CommonModule } from '@angular/common';
+import { Routes } from '@angular/router';
+import { LoginComponent } from './pages/login/login.component';
+import { SignUpComponent } from './pages/sign-up/sign-up.component';
+import { HomeComponent } from './pages/home/home.component';
+import { authGuard } from './shared/guards/auth.guard';
+import { ProfileComponent } from './pages/profile/profile.component';
 
-@Component({
-  selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, FooterComponent, NavComponent, CommonModule],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
-})
-export class AppComponent {
-  title = 'insta-pic-app';
-
-  /*showNav = false;
-  showHeader = true;
-
-  constructor(private router:Router){
-    this.router.events.subscribe(event =>{
-      if (event instanceof NavigationEnd) {
-        this.showNav = event.url === '/home';
-        this.showHeader = event.url !== '/home';
-      }
-    })
-  }*/
-}
+export const routes: Routes = [
+    {
+        path:'',
+        component:LoginComponent
+    },
+    {
+        path:'sign-up',
+        component:SignUpComponent
+    },
+    {
+        path:'home',
+        component:HomeComponent,
+        canActivate:[authGuard]
+    },
+    {
+        path:'profile',
+        component:ProfileComponent,
+        canActivate:[authGuard]
+    },
+    {
+        path:'**',
+        redirectTo:'',
+        pathMatch: 'full'
+    }
+];

@@ -1,9 +1,27 @@
+header {
+  color: white;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+header div {
+  border-left: 0.25rem dotted;
+  border-right: 0.25rem dotted;
+  border-color: white;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 1rem #EC9A29;
+}
 
+nav{
   background-color: #0F8B8D;
   padding: 10px;
 }
 
-ul{
+nav ul{
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -11,15 +29,15 @@ ul{
   justify-content: space-around;
 }
 
-ul li{
+nav ul li{
   display: inline-block;
 }
 
-ul li:hover{
+nav ul li:hover{
   opacity: 0.5;
 }
 
-ul li a{
+nav ul li a{
   color: #DAD2D8;
   text-decoration: none;
   padding: 10px 20px;
@@ -27,18 +45,18 @@ ul li a{
   transition: all 0.3s ease;
 }
 
-ul li a:hover{
+nav ul li a:hover{
   background-color: #0F8B8D;
   border-radius: 5px;
   transform: scale(1.1);
 }
 
-ul li a[href="index.html"]{
+nav ul li a[href="index.html"]{
   background-color: #A8201A;
   border-radius: 5px;
 }
 
-ul li a[href="index.html"]:hover{
+nav ul li a[href="index.html"]:hover{
   background-color: #8C1B16;
   transform: scale(1.1);
 }

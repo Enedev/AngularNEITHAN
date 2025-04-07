@@ -1,6 +1,5 @@
-import { Component, inject, OnDestroy, OnInit } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit, DoCheck  } from '@angular/core';
 import { AuthService } from '../../shared/services/auth.service';
-import Swal from 'sweetalert2';
 import { User } from '../../shared/interfaces/user.interface';
 
 @Component({
@@ -9,9 +8,10 @@ import { User } from '../../shared/interfaces/user.interface';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent implements OnInit, OnDestroy{
+export class HomeComponent implements OnInit, OnDestroy, DoCheck {
 
-  followers = 15;
+  seguidores: number = 5;
+  seguidoresAnteriores: number = 5;
   authService;
   username = 'Bienvenido';
   publicaciones = 0;
@@ -26,7 +26,18 @@ export class HomeComponent implements OnInit, OnDestroy{
     const user = this.authService.getUser();
     this.username = user? user.name!:'Bienvenido';
   }
-  
+
+  ngDoCheck(): void {
+    if (this.seguidores !== this.seguidoresAnteriores) {
+      console.log(`¡Nuevo seguidor! Ahora tienes ${this.seguidores} seguidores.`);
+      this.seguidoresAnteriores = this.seguidores;
+    }
+  }
+
+  subirSeguidor(): void {
+    this.seguidores++;
+  }
+
   ngOnDestroy(): void {
     console.log('Este es OnDestroy');
 
